@@ -43,6 +43,7 @@ resource "aws_eip" "nat" {
 }
 
 
+
 // SG to allow SSH connections from anywhere
 resource "aws_security_group" "allow_ssh_pub" {
   name        = "${var.namespace}-allow_ssh"
@@ -104,7 +105,7 @@ data "aws_subnet_ids" "example" {
 # нужно ввести ID только что созданной VPC, а как вытащить ИД по имени не могу найти
 # стандартные модули Терраформ вытаскивают все опираясь на ИД
 
-  vpc_id = "vpc-014ac24e1eb3f6d44" 
+  vpc_id = "vpc-014ac24e1eb3f6d44"
 }
 
 data "aws_subnet" "example" {
@@ -281,4 +282,3 @@ output "subnet_id" {
 }
 
 ##########################
-
